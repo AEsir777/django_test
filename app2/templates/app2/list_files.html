@@ -1,0 +1,10 @@
+<html>
+    <title>List the files</title>
+
+    <h1> List: </h1>
+    <ul>
+        {% for file in files %}
+            <li>{{file.fileName}}: {{file.description}}</li>
+        {% endfor %}
+    </ul>
+</html>
