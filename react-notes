@@ -1,0 +1,8 @@
+## create react app
+building a new single-page application
+
+*npm run build* will create optimized build of app
+compose complex UIs from small and isolated pieces of code called "components"
+
+- passing prop: information flows from parent to child
+- function component: only contain a *render* method and don't have their own state

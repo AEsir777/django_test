@@ -1,0 +1,27 @@
+## build the Diango Project
+    1. start your project
+    2. create the view
+    3. use templates
+    4. apps and modularization
+        ajango-admin startapp notes  -> add in setting.py
+        create url.py in app folder
+
+migrate: changes database
+createsupersuperuser
+
+### authentication for the user
+@login_required(login_url='/admin')
+
+## migrade database
+ORM
+classes(model) -> makemigrations -> migrate -> database
+makemigrations
+register the modal in admin.py
+
+shell: check the content of database
+first_item = App2.objects.get(pk='1') // primekey = 1
+xxx.objects.all()     create(xxx)
+item.field()
+exclude/filter(field__startswith="xx")
+startswith, icontains
+
