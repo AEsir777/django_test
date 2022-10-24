@@ -1,0 +1,8 @@
+<html>
+    <form method='post'>{% csrf_token %}
+        <p>Are you sure you want to delete "{{file.fileName}}"?</p>
+        
+        <input type="submit" value="Confirm">
+        <a href="{% url 'file.list' %}">back</a>
+    </form> 
+</html>

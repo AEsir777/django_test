@@ -6,4 +6,7 @@
     <p>
         file description: {{file.description}}
     </p>
+    <a href = "{% url 'file.list' %}">View all file</a>
+    <a href = "{% url 'update.file' pk=file.id %}">Edit the file</a> 
+    <a href = "{% url 'update.delete' pk=file.id %}">Delete the file</a> 
 </html>

@@ -1,8 +1,9 @@
+{% load static %}
 <html>
     <head>
-        <link ref="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
-    <form action="{% url 'upload.file' %}" method='post'> {% csrf_token %}
+    <form method='post'> {% csrf_token %}
         {{ form }}
         <button type="submit">Submit</button>
     </form>
@@ -11,4 +12,5 @@
         {{form.errors.fileName.as_text}}
     </div>
     {% endif %}
+    <a href="{% url 'file.list' %}"> Cancel </a>
 </html>
