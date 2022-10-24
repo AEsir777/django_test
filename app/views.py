@@ -1,13 +1,22 @@
+import datetime
+from pipes import Template
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
-def get_request(request):
-    return render(request, 'app/index.html', 
-    {'content': 'This is the content passed from view to the template.'})
-# {} pass the information from the view to the template
+class AppView(TemplateView):
+    template_name = 'app/index.html'
+    extra_context = {'today': datetime.time(),
+                     'content': 'This is the content passed from view to the template.'}
 
-@login_required(login_url='/admin')
+class AuthorizedView(LoginRequiredMixin, TemplateView):
+    template_name = 'app/authorized.html'
+    extra_context = {'authorize': 'This is the authorized content.'}
+    login_url = '/admin'
+
+""" @login_required(login_url='/admin')
 def authorize(request):
-    return render(request, 'app/authorized.html', {'authorize': 'This is the authorized content.'})
+    return render(request, 'app/authorized.html', {})
+# {} pass the information from the view to the template """

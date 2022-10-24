@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <link ref="stylesheet" href="style.css" type="text/css">
+    </head>
+    <form action="{% url 'upload.file' %}" method='post'> {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    {% if form.errors %}
+    <div class="err_text">
+        {{form.errors.fileName.as_text}}
+    </div>
+    {% endif %}
+</html>

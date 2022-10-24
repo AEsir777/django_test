@@ -25,3 +25,14 @@ item.field()
 exclude/filter(field__startswith="xx")
 startswith, icontains
 
+Model + CRUD
+C: Create    R: Retrieve      U:update     D:delete
+
+## CSRF token 
+Cross-Site Request Forgery
+django sends unique token to the browser of which website with a form
+browser -> form + CSRF -> django and accept otherwise reject
+
+## form
+can add specifications for file
+

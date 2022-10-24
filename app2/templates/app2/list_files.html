@@ -2,9 +2,14 @@
     <title>List the files</title>
 
     <h1> List: </h1>
-    <ul>
-        {% for file in files %}
-            <li>{{file.fileName}}: {{file.description}}</li>
-        {% endfor %}
-    </ul>
+    {% for file in files %}
+    <div>
+        <div>
+            <a href="{% url 'detail' pk=file.id %}">
+                <h3>{{file.fileName}}</h3>
+            </a>   
+            {{file.description|truncatechars:15}}
+        </div>
+    </div>
+    {% endfor %}
 </html>
