@@ -126,3 +126,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'react-app', 'build', 'static')]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = '/app2'
+LOGIN_URL= '/login'

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class App2(models.Model):
@@ -6,4 +7,6 @@ class App2(models.Model):
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     fileUploaded = models.FileField(upload_to='app2/uploaded_file')
+    # CASCADE: also delete all the notes associated with the user
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="files")
 

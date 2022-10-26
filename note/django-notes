@@ -36,3 +36,6 @@ browser -> form + CSRF -> django and accept otherwise reject
 ## form
 can add specifications for file
 
+data -> form ->(form.is_valid?) -> clean methods  -> good saved as cleaned data -> save()
+                         -> bad inputs -> raise error
+
